@@ -1,5 +1,5 @@
 /*
-Copyright © 2022 NAME HERE <EMAIL ADDRESS>
+Copyright © 2022 JORDAN SILVA OLIVEIRA <JORDANSILVA102@GMAIL.COM>
 
 */
 package cmd
@@ -51,18 +51,17 @@ var mergeCmd = &cobra.Command{
 			return nil
 		})
 
-		//remove a pasta rrot do array de nomes
 		directorys = directorys[1:]
 		if err != nil {
 			fmt.Println(err)
 		}
-		//imprime a quantidade de página
+		//return the ammount of pages in the new .cbz file
 		fmt.Println("The final cbz file will have: " + strconv.Itoa(len(pages)) + " pages")
 
-		//cria pasta de destino
+		//create a destiny folder
 		os.Mkdir(rootFolderPath+"/"+destinyFolder, 0755)
 
-		//copia os arquivos para a pasta de destino e os renomeia para manter em ordem no volume
+		//Copy files to the detiny folder and rename them to keep the right order
 		for _, comicFolder := range directorys {
 			err := filepath.WalkDir(rootFolderPath+"/"+comicFolder, func(path string, d os.DirEntry, err error) error {
 
@@ -120,7 +119,7 @@ var mergeCmd = &cobra.Command{
 			}
 		}
 
-		//Comprimindo a pasta e criando o arquivo .cbz
+		//Compress folder into a .cbz
 		finalFile, err := os.Create(rootFolderPath + "/" + destinyFolder + ".zip")
 		if err != nil {
 			panic(err)
