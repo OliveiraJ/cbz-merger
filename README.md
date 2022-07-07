@@ -11,5 +11,5 @@ Cbz-merger was developed as a simple project to help you when in need of tool to
   with anyone that its having problems with this kind of task.
   PS2.: More functionalities will be added in the future, like extracting automatically the .cbz files, but you can use any program that suports this kind of file,
   I used PeaZip.
-  PS3.: This program was developed in golang 1.18.1 and to run on Fedora 36 Linux dist, and was not tested in other OS like Ubuntu or Windows, so take this
+  PS3.: This program was developed in golang 1.18.1 and to run on Fedora 36 Linux dist, and was not tested in other OS like Ubuntu or Windows, so take this in
   consideration.
